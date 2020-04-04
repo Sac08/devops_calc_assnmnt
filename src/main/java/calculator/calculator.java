@@ -9,7 +9,7 @@ public class calculator {
 		System.out.println("Welcome to Calculator App!");
 		Scanner sc = new Scanner(System.in);
 		int choice = -1;
-		while (choice != 5)
+		while (choice != 6)
 		{
 			int a;
 			int b;
@@ -54,7 +54,7 @@ public class calculator {
 				System.out.println(Math.pow(a,b));
 			}
 			System.out.println("Enter your choice :");
-			System.out.println("1.Add\t2.sub\t3.mul\t4.div\t5.exit");
+			System.out.println("1.Add\t2.sub\t3.mul\t4.div\t5.a^b\t6.exit");
 			
 			choice = sc.nextInt();
 		}
