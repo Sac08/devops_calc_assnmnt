@@ -3,7 +3,7 @@ import java.util.*;
 
 import java.lang.Exception;
 
-public class Main {
+public class calculator {
 	public static void main(String args[])
 	{
 		System.out.println("Welcome to Calculator App!");
