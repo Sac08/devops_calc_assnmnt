@@ -51,6 +51,8 @@ public class calculator {
 			else if (choice == 5)
 			{
 				System.out.println("enter 'a' and 'b' numbers");
+				a = sc.nextInt();
+				b = sc.nextInt();
 				System.out.println(Math.pow(a,b));
 			}
 			System.out.println("Enter your choice :");
