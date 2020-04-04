@@ -1,13 +1,12 @@
 package calculator;
 import java.util.*;
-
+import java.lang.Math;
 import java.lang.Exception;
 
 public class calculator {
 	public static void main(String args[])
 	{
 		System.out.println("Welcome to Calculator App!");
-		System.out.println("Enter your choice :");
 		Scanner sc = new Scanner(System.in);
 		int choice = -1;
 		while (choice != 5)
@@ -49,6 +48,12 @@ public class calculator {
 					System.out.println("divide by zero, cant do that!");
 				}
 			}
+			else if (choice == 5)
+			{
+				System.out.println("enter 'a' and 'b' numbers");
+				System.out.println(Math.pow(a,b));
+			}
+			System.out.println("Enter your choice :");
 			System.out.println("1.Add\t2.sub\t3.mul\t4.div\t5.exit");
 			
 			choice = sc.nextInt();
