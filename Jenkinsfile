@@ -17,6 +17,11 @@ pipeline {
         sh 'mvn test'
       }
     }
+     stage ('Deploy') {
+	steps {
+		build 'rundeck_job'
+	}
+    }
   }
 }
 
