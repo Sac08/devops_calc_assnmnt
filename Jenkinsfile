@@ -17,7 +17,11 @@ pipeline {
         sh 'mvn test'
       }
     }
-    
+    stage('testing trigger'){
+	steps {
+	  echo 'working'
+	}
+    }
   }
 }
 
