@@ -1,9 +1,10 @@
 pipeline {
-  envirnoment{
+  environment{
   	registry = "sac08/devops-calculator"
     registryCredential = ‘dockerhub’
     dockerImage = ''
   }
+  agent any
   stage('Cloning Git') {
   	steps {
    		git 'https://github.com/Sac08/devops_calc_assnmnt.git'
@@ -25,11 +26,6 @@ pipeline {
       steps {
         sh 'mvn test'
       }
-    }
-    stage('testing trigger'){
-		steps {
-		  echo 'working'
-		}
     }
     stage('Building docker image') {
       steps{
