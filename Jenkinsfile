@@ -23,9 +23,9 @@ pipeline {
         sh 'mvn compile'
       }
     }
-    stage('Test the build') {
+    stage('Test and produce jar') {
       steps {
-        sh 'mvn test'
+        sh 'mvn test install'
       }
     }
     stage('Building docker image') {
