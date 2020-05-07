@@ -9,10 +9,10 @@ pipeline {
   stages 
     {
     stage('Cloning Git') {
-		  	steps {
-		   		git 'https://github.com/Sac08/devops_calc_assnmnt.git'
-		  	}
+	steps {
+		git 'https://github.com/Sac08/devops_calc_assnmnt.git'
   	}
+    }
     stage('Clean prev build') {
       steps {
         sh 'mvn clean'
