@@ -1,5 +1,14 @@
 pipeline {
-  agent any
+  envirnoment{
+  	registry = "sac08/devops-calculator"
+    registryCredential = ‘dockerhub’
+    dockerImage = ''
+  }
+  stage('Cloning Git') {
+  	steps {
+   		git 'https://github.com/Sac08/devops_calc_assnmnt.git'
+  	}
+  }
   stages 
     {
     stage('Clean prev build') {
@@ -18,9 +27,30 @@ pipeline {
       }
     }
     stage('testing trigger'){
-	steps {
-	  echo 'working'
-	}
+		steps {
+		  echo 'working'
+		}
+    }
+    stage('Building docker image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+    stage('Deploying docker Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
     }
   }
 }
