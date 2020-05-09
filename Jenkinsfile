@@ -51,7 +51,7 @@ pipeline {
     }
     stage('Deployment') {
 	steps {
-		build 'rundeck_deploy'
+		echo 'working'
 	}
      }
   }
