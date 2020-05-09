@@ -49,6 +49,11 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
+    stage('Deployment') {
+	steps {
+		build 'rundeck_deploy'
+	}
+     }
   }
 }
 
